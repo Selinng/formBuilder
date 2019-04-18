@@ -1,6 +1,6 @@
-# frombuilder
+# fromBuilder
 
-> A Vue.js project
+> 一个基于vue的可拖拽生成表单工具
 
 ## Build Setup
 
