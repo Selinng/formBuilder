@@ -17,5 +17,8 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## 使用库
+* [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable) - 拖拽操作
+* [https://github.com/vuejs/vue-router](https://github.com/vuejs/vue-router) - 路由跳页
+* 使用野狗云作数据存储
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
