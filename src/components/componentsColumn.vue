@@ -319,7 +319,7 @@ export default {
 ul {
   list-style: none;
   padding: 0 10px;
-  height: 480px;
+  height: calc(100vh - 163px);
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -333,6 +333,7 @@ ul li {
   left: 0;
   padding: 0;
   padding-right: 15px;
+  height: calc(100vh - 80px);
 }
 nav {
   padding: 1px;

@@ -30,7 +30,7 @@
                         :ref="'component'+component.id"
                         :is="component.componentname"></component>
                 </div>
-                <br/><br/><br/>
+                
             </draggable>
         </form>
         <el-dialog title="确认保存" :visible.sync="dialogTemplateVisible">

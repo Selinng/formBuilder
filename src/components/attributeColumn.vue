@@ -98,7 +98,7 @@ export default {
         padding-left: 15px;
     }
     nav{
-        height: 560px;
+        height: calc(100vh - 83px);
         padding: 1px;
     }
     form{
