@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-3 builderleft">
+  <div class="col-sm-2 builderleft">
     <nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0;">
       <h5 class="nav-header">组件库</h5>
       <select class="form-control nav-select" v-model="componentstype">
@@ -319,19 +319,9 @@ export default {
 ul {
   list-style: none;
   padding: 0;
-  height: calc(100vh - 135px);
+  height: calc(100vh - 132px);
   overflow-y: scroll;
   overflow-x: hidden;
-}
-::-webkit-scrollbar-track {
-  background-color: #fff;
-}
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #aeaeae;
-  border-radius: 2px;
 }
 ul li {
   background-color: #fff;
@@ -339,13 +329,15 @@ ul li {
   padding: 15px;
   border-bottom: 1px solid #aeaeae;
 }
+ul li:last-child {
+  border-bottom: 0;
+}
 .builderleft {
   position: fixed;
   top: 50px;
   left: 0;
   padding: 0;
   padding-right: 15px;
-  height: calc(100vh - 80px);
 }
 nav {
   padding: 1px;

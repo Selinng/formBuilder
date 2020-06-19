@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <label
-      class="col-sm-3 control-label"
+      class="col-sm-2 control-label"
     >{{componentattr ? componentattr.title : defaultData.title}}</label>
     <div class="col-sm-9">
       <div class="input-group">

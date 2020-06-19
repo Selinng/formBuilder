@@ -3,25 +3,20 @@
     <router-view></router-view>
   </div>
 </template>
-<script>
-import Vue from "vue";
-import bus from "./js/event.js";
-export default {
-  data() {
-    return {};
-  },
-
-  created() {
-    // this.components.forEach(component => {
-    //     Vue.component(component.name, require("./components/formcomponents/" + component.name + ".vue").default )
-    // })
-  }
-};
-</script>
 <style>
 body {
   background-color: #ddd;
   overflow-x: hidden;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aeaeae;
+  border-radius: 2px;
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label for="name" class="col-sm-3 control-label">{{finalTitle}}</label>
+    <label for="name" class="col-sm-2 control-label">{{finalTitle}}</label>
     <div class="col-sm-9">
       <input
         type="text"

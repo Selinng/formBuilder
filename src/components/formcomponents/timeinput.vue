@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label for="name" class="col-sm-3 control-label">{{finalTitle}}</label>
+    <label for="name" class="col-sm-2 control-label">{{finalTitle}}</label>
     <div class="col-sm-9">
       <input type="time" class="form-control" placeholder="请输入时间" :required="finalRequired" />
       <p class="help-block">{{finalRemarks}}</p>

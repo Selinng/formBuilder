@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-6 buildercenter">
+  <div class="col-sm-7 buildercenter">
     <form class="form-horizontal build" role="form">
       <draggable
         :options="dragoptions"

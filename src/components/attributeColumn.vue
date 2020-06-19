@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-3 builderright">
+  <div class="col-sm-2 builderright">
     <nav class="navbar navbar-default navbar-static-top">
       <h5 class="nav-header">属性</h5>
       <form class="form-horizontal" role="form" v-if="componentAttribute">
@@ -99,7 +99,7 @@ export default {
   padding-left: 15px;
 }
 nav {
-  height: calc(100vh - 83px);
+  height: calc(100vh - 49px);
   padding: 1px;
 }
 form {

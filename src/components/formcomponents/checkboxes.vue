@@ -2,7 +2,7 @@
   <div class="form-group">
     <label
       for="lastname"
-      class="col-sm-3 control-label"
+      class="col-sm-2 control-label"
     >{{componentattr ? componentattr.title : defaultData.title}}</label>
     <div class="col-sm-9">
       <div class="checkbox" v-for="(checkbox, index) in checkboxlist" :key="index">
