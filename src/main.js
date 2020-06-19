@@ -7,6 +7,7 @@ import * as wilddog from 'wilddog'
 import axios from 'axios'
 import App from './App'
 import router from './router'
+import appInit from './js/appInit'
 // import store from './store'
 
 Vue.config.productionTip = false
@@ -20,6 +21,9 @@ Vue.prototype.wilddog = wilddog.sync().ref()
 axios.defaults.baseURL = 'https://wd3472473338ryrats.wilddogio.com/'
 Vue.prototype.http = axios
 
+if(!localStorage.init) {
+  appInit()
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
