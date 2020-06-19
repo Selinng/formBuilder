@@ -318,14 +318,26 @@ export default {
  <style scoped>
 ul {
   list-style: none;
-  padding: 0 10px;
-  height: calc(100vh - 163px);
+  padding: 0;
+  height: calc(100vh - 135px);
   overflow-y: scroll;
   overflow-x: hidden;
 }
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #aeaeae;
+  border-radius: 2px;
+}
 ul li {
   background-color: #fff;
-  margin: 8px;
+  margin: 0;
+  padding: 15px;
+  border-bottom: 1px solid #aeaeae;
 }
 .builderleft {
   position: fixed;
