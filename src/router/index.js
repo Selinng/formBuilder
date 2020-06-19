@@ -8,18 +8,18 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/edit', 
-      name:'edit', 
+      path: '/edit',
+      name: 'edit',
       component: Edit
     },
     {
-      path:'/preview', 
-      alias: '/', 
-      name:'preview', 
+      path: '/preview',
+      alias: '/',
+      name: 'preview',
       component: Preview
     },
     {
-      path: '*', 
+      path: '*',
       redirect: '/'
     }
   ],

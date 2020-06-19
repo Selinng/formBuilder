@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 Vue.use(Elementui)
 
 const wilddogConfig = {
-	syncURL: "https://wd3472473338ryrats.wilddogio.com/" //输入节点 URL
+  syncURL: "https://wd3472473338ryrats.wilddogio.com/" //输入节点 URL
 }
 wilddog.initializeApp(wilddogConfig)
 Vue.prototype.wilddog = wilddog.sync().ref()

@@ -13,7 +13,7 @@
 
     <draggable :options="dragoptions" element="ul" v-model="newcomps">
       <li v-for="(item, index) in comps" :key="index">
-        <img :src="item.imgsrc" v-show="componentstype==='all'||item.type==componentstype" alt>
+        <img :src="item.imgsrc" v-show="componentstype==='all'||item.type==componentstype" alt />
       </li>
     </draggable>
   </div>
@@ -347,5 +347,4 @@ form {
   pointer-events: none;
 }
 </style>
- 
- 
+
