@@ -20,7 +20,8 @@ npm run build --report
 ## 使用库
 * [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable) - 拖拽操作
 * [https://github.com/vuejs/vue-router](https://github.com/vuejs/vue-router) - 路由跳页
-* 使用野狗云进行数据存储(已经停止免费服务，不能获取以及上传表单模板)
+* ~~使用野狗云进行数据存储(已经停止免费服务，不能获取以及上传表单模板)~~
+* localStorage模拟数据库，每个字段模拟表，本地实现一个简单的增删改查方法以完全取代野狗云
 ## 功能
 * 可以通过拖拽生成一份完整表单，并且配置表单元素内容，包含大部分常见表单元素
 * 能够对表单进行保存或删除
