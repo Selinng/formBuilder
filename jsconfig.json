@@ -1,0 +1,16 @@
+{
+  "exclude": [
+    "node_modules",
+    "dist",
+    "static"
+  ],
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "es6",
+    "lib": ["es6", "dom"],
+    "baseUrl": "./",
+    "paths": {
+      "@/": ["src/"]
+    }
+  }
+}

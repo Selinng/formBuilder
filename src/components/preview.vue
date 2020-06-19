@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-3 builderleft">
+    <div class="col-sm-2 builderleft">
       <nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0;">
         <select class="form-control nav-select" v-model="previewtype">
           <option value="all">全部</option>
@@ -11,14 +11,14 @@
       <ul class="list-group">
         <li
           class="list-group-item"
-          :class="{active: key===selectkey}"
-          @click="preview(key)"
-          v-for="(item, key) in formList"
-          :key="key"
-        >{{item.name || item.setting.name}}</li>
+          :class="{active: item.ID===selectID}"
+          @click="preview(item.ID)"
+          v-for="item in formList"
+          :key="item.ID"
+        >{{item.name}}</li>
       </ul>
     </div>
-    <div class="col-sm-9 fr content">
+    <div class="col-sm-10 fr content">
       <div class="select-button">
         <center class="center">
           <button class="btn btn-info btn-sm" @click="selectTemplate">选择此模板</button>
@@ -31,8 +31,8 @@
       </div>
       <form class="form-horizontal" role="form">
         <component
-          v-for="(item, key) in selectForm.data"
-          :key="key"
+          v-for="item in selectForm.data"
+          :key="item.id"
           :componentattr="item"
           :is="item.componentname"
         ></component>
@@ -41,14 +41,15 @@
   </div>
 </template>
  <script>
-import bus from "../js/event.js";
+import bus from "../util/event.js";
 import Vue from "vue";
+import { templateHttp } from '../util/http'
 export default {
   data() {
     return {
       previewtype: "all",
-      formList: {},
-      selectkey: null,
+      formList: [],
+      selectID: null,
       components: [
         {
           name: "formtitle",
@@ -128,8 +129,8 @@ export default {
 
   computed: {
     selectForm() {
-      if (this.selectkey) {
-        return this.formList[this.selectkey];
+      if (this.selectID) {
+        return this.formList.find(i => i.ID === this.selectID);
       } else {
         return [];
       }
@@ -138,43 +139,30 @@ export default {
 
   methods: {
     selectTemplate() {
-      this.$router.push({ path: "/edit", query: { id: this.selectkey } });
+      this.$router.push({ path: "/edit", query: { id: this.selectID } });
     },
 
     preview(key) {
-      this.selectkey = key;
+      this.selectID = key;
+    },
+
+    getData() {
+      this.formList = templateHttp.getList()
     },
 
     deleteTemplate() {
-      console.log(this.wilddog);
-      this.wilddog
-        .child("template")
-        .child(this.selectkey)
-        .set(null)
-        .then(() => {
-          // this.$router.query = null
-          console.log(this.$router);
-          this.wilddog.child("template").on("value", res => {
-            this.formList = res.val();
-            this.selectkey = Object.keys(this.formList)[0];
-          });
-          alert("删除成功！");
-        });
+      this.formList = templateHttp.delete(this.selectID)
+      this.selectID = 0
+      this.$message({
+        message: '删除成功！',
+        type: 'success'
+      })
     }
   },
 
   created() {
-    this.wilddog.child("template").on("value", res => {
-      this.formList = res.val();
-      if (
-        this.$route.query.id &&
-        Object.keys(this.formList).includes(this.$route.query.id)
-      ) {
-        this.selectkey = this.$route.query.id;
-      } else {
-        this.selectkey = Object.keys(this.formList)[0];
-      }
-    });
+    this.getData()
+    console.log(this.formList)
     this.components.forEach(component => {
       Vue.component(
         component.name,
@@ -205,11 +193,11 @@ body {
 }
 ul {
   list-style: none;
-  /* padding: 0 10px; */
-  height: 570px;
+  height: calc(100vh - 65px);
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #f8f8f8;
+  margin-bottom: 0;
 }
 ul li {
   background-color: #fff;
@@ -231,7 +219,7 @@ nav {
 form {
   margin: 50px auto;
   padding: 40px 30px;
-  max-width: 750px;
+  max-width: 80%;
   background-color: #fff;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;

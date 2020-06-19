@@ -1,3 +1,9 @@
+import appInit from './appInit'
+
+console.log(localStorage.init)
+if(!localStorage.init) {
+  appInit()
+}
 class Http {
   constructor(name) {
     this.name = name
@@ -31,6 +37,7 @@ class Http {
     return this.data
   }
 }
+console.log('templateHttp')
 const templateHttp = new Http('template')
 
 export { templateHttp }

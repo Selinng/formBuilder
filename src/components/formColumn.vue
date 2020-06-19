@@ -36,9 +36,12 @@
       </draggable>
     </form>
     <el-dialog title="确认保存" :visible.sync="dialogTemplateVisible">
-      <el-form>
-        <el-form-item label="输入模板名" label-width="120px">
-          <el-input v-model="templateName" autocomplete="off"></el-input>
+      <el-form ref="form" :rules="rules" :model="form">
+        <el-form-item label="输入模板名" label-width="120px" prop="name">
+          <el-input v-model="form.name" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="输入表单请求url" label-width="120px" prop="url">
+          <el-input v-model="form.url" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -50,7 +53,8 @@
 </template>
  <script>
 import draggable from "vuedraggable";
-import bus from "../js/event.js";
+import bus from "../util/event.js";
+import { templateHttp } from '../util/http'
 export default {
   data() {
     return {
@@ -67,11 +71,19 @@ export default {
       },
       selectedid: null,
       dialogTemplateVisible: false,
-      templateName: "",
       formSetting: {
         name: "",
         method: "",
         url: ""
+      },
+      form: {
+        name: '',
+        url: ''
+      },
+      rules: {
+        name: [
+          { required: true, message: '请输入模板名称', trigger: 'blur' }
+        ]
       }
     };
   },
@@ -129,35 +141,78 @@ export default {
 
     cancelTemplate() {
       this.dialogTemplateVisible = false;
-      this.templateName = "";
+      this.$refs.form.resetFields()
     },
 
     saveTemplate() {
-      let pushId;
-      const self = this;
-      async function savedata() {
-        pushId = self.wilddog
-          .child("template")
-          .push(
-            {
-              name: self.templateName,
-              data: self.components
-            },
-            error => {
-              if (error == null) {
-                self.dialogTemplateVisible = false;
-                self.templateName = "";
-              } else {
-                alert("添加失败");
-              }
-            }
-          )
-          .key();
-      }
+      templateHttp.post({
+        name: this.form.name,
+        url: this.form.url,
+        data: this.components
+      })
+      this.$message({
+        message: '添加成功！',
+        type: 'success'
+      })
+      this.cancelTemplate()
+    },
 
-      savedata().then(() => {
-        this.$router.push({ path: "/preview", query: { id: pushId } });
-      });
+    keydownEvent(e) {
+      let index = this.components.findIndex(i => i.id === this.selectedid);
+      if (e.keyCode === 38) {
+        if (e.ctrlKey) {
+          //Ctrl+Up
+          if (index > 0) {
+            console.log(this.components.length - 1);
+            let component = this.components.splice(index, 1)[0];
+            console.log(component);
+            this.components.splice(index - 1, 0, component);
+            this.selectedid = component.id;
+          } else {
+            index = this.components.length;
+            this.selectedid = this.components[index - 1].id;
+          }
+        } else {
+          //Up
+          if (index < 0) {
+            index = this.components.length;
+          }
+          if (index > 0) {
+            this.selectedid = this.components[index - 1].id;
+          }
+        }
+      }
+      if (e.keyCode === 40) {
+        if (e.ctrlKey) {
+          //Ctrl+Down
+          if (index < this.components.length - 1) {
+            if (index < 0) {
+              this.selectedid = this.components[index + 1].id;
+            } else {
+              let component = this.components.splice(index, 1);
+              this.components.splice(index + 1, 0, component[0]);
+              this.selectedid = component[0].id;
+            }
+          }
+        } else {
+          //Down
+          if (index < this.components.length - 1) {
+            this.selectedid = this.components[index + 1].id;
+          }
+        }
+      }
+      if (e.keyCode == 45 && e.ctrlKey) {
+        //Ctrl+Insert
+        if (index >= 0 && index < this.components.length) {
+          this.addComponent(index, this.selectedid);
+        }
+      }
+      if (e.keyCode == 46 && e.ctrlKey) {
+        //Ctrl+Delete
+        if (index >= 0 && index < this.components.length) {
+          this.removeComponent(index, this.selectedid);
+        }
+      }
     }
   },
 
@@ -172,81 +227,15 @@ export default {
   },
 
   created() {
-    this.wilddog.child("template").on("value", res => {
-      let data = res.val();
-      for (let key in data) {
-        if (this.templateId === key) {
-          console.log(key, data[key]);
-          this.components = data[key].data;
-          break;
-        }
-      }
+    console.log(templateHttp.get(this.templateId))
+    this.templateId && (this.components = templateHttp.get(this.templateId).data)
 
-      if (this.components.length > 0) {
-        let idList = this.components.map(i => (i = i.id));
-        this.lastid = Math.max(...idList) + 1;
-      } else {
-        this.lastid = 0;
-      }
-
-      document.onkeydown = e => {
-        let index = this.components.findIndex(i => i.id === this.selectedid);
-        if (e.keyCode === 38) {
-          if (e.ctrlKey) {
-            //Ctrl+Up
-            if (index > 0) {
-              console.log(this.components.length - 1);
-              let component = this.components.splice(index, 1)[0];
-              console.log(component);
-              this.components.splice(index - 1, 0, component);
-              this.selectedid = component.id;
-            } else {
-              index = this.components.length;
-              this.selectedid = this.components[index - 1].id;
-            }
-          } else {
-            //Up
-            if (index < 0) {
-              index = this.components.length;
-            }
-            if (index > 0) {
-              this.selectedid = this.components[index - 1].id;
-            }
-          }
-        }
-        if (e.keyCode === 40) {
-          if (e.ctrlKey) {
-            //Ctrl+Down
-            if (index < this.components.length - 1) {
-              if (index < 0) {
-                this.selectedid = this.components[index + 1].id;
-              } else {
-                let component = this.components.splice(index, 1);
-                this.components.splice(index + 1, 0, component[0]);
-                this.selectedid = component[0].id;
-              }
-            }
-          } else {
-            //Down
-            if (index < this.components.length - 1) {
-              this.selectedid = this.components[index + 1].id;
-            }
-          }
-        }
-        if (e.keyCode == 45 && e.ctrlKey) {
-          //Ctrl+Insert
-          if (index >= 0 && index < this.components.length) {
-            this.addComponent(index, this.selectedid);
-          }
-        }
-        if (e.keyCode == 46 && e.ctrlKey) {
-          //Ctrl+Delete
-          if (index >= 0 && index < this.components.length) {
-            this.removeComponent(index, this.selectedid);
-          }
-        }
-      };
-    });
+    if (this.components.length > 0) {
+      let idList = this.components.map(i => (i = i.id));
+      this.lastid = Math.max(...idList) + 1;
+    } else {
+      this.lastid = 0;
+    }
   },
 
   mounted() {
@@ -256,11 +245,15 @@ export default {
       // console.log(componentsJson)
       alert(componentsJson);
       // this.dialogFormVisible = true
-    });
+    })
 
     bus.$on("saveAsTemplate", () => {
       this.dialogTemplateVisible = true;
-    });
+    })
+    document.addEventListener('keydown', this.keydownEvent)
+  },
+  beforeDestroy() {
+    document.removeEventListener('keydown', this.keydownEvent)
   }
 };
 </script>

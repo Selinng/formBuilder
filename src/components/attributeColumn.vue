@@ -22,7 +22,7 @@ import style from "./attributecomponents/style";
 import title from "./attributecomponents/title";
 import textareacontent from "./attributecomponents/textareaContent";
 
-import bus from "../js/event.js";
+import bus from "../util/event.js";
 export default {
   data() {
     return {

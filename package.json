@@ -10,14 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "element-ui": "^2.4.11",
     "eslint": "^7.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuedraggable": "^2.23.2",
-    "vuex": "^3.0.1",
-    "wilddog": "^2.5.17"
+    "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

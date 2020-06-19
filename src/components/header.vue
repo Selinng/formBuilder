@@ -8,7 +8,7 @@
   </nav>
 </template>
 <script>
-import bus from "../js/event.js";
+import bus from "../util/event.js";
 export default {
   methods: {
     saveform() {

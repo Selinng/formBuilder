@@ -21,7 +21,7 @@
  <script>
 import draggable from "vuedraggable";
 import Vue from "vue";
-import bus from "../js/event.js";
+import bus from "../util/event.js";
 export default {
   data() {
     return {
