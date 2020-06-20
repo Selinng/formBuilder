@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/'
+      redirect: '/preview'
     }
   ],
   mode: 'history'
