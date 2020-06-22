@@ -112,7 +112,7 @@ export default {
       ],
       comps: [
         {
-          imgsrc: "/static/images/formtitle.png",
+          imgsrc: "./static/images/formtitle.png",
           type: "",
           defaultData: {
             componentname: "formtitle",
@@ -121,7 +121,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/textinput.png",
+          imgsrc: "./static/images/textinput.png",
           type: "input",
           defaultData: {
             componentname: "textinput",
@@ -132,7 +132,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/numberinput.png",
+          imgsrc: "./static/images/numberinput.png",
           type: "input",
           defaultData: {
             componentname: "numberinput",
@@ -142,7 +142,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/dateinput.png",
+          imgsrc: "./static/images/dateinput.png",
           type: "input",
           defaultData: {
             componentname: "dateinput",
@@ -152,7 +152,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/timeinput.png",
+          imgsrc: "./static/images/timeinput.png",
           type: "input",
           defaultData: {
             componentname: "timeinput",
@@ -162,7 +162,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/prependedtext.png",
+          imgsrc: "./static/images/prependedtext.png",
           type: "input",
           defaultData: {
             componentname: "prependedtext",
@@ -174,7 +174,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/appendedtext.png",
+          imgsrc: "./static/images/appendedtext.png",
           type: "input",
           defaultData: {
             componentname: "appendedtext",
@@ -186,7 +186,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/formtextarea.png",
+          imgsrc: "./static/images/formtextarea.png",
           type: "input",
           defaultData: {
             componentname: "formtextarea",
@@ -198,7 +198,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/selectbasic.png",
+          imgsrc: "./static/images/selectbasic.png",
           type: "listselection",
           defaultData: {
             componentname: "selectbasic",
@@ -207,7 +207,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/formaddress.png",
+          imgsrc: "./static/images/formaddress.png",
           type: "listselection",
           defaultData: {
             componentname: "formaddress",
@@ -217,7 +217,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/selectmultiple.png",
+          imgsrc: "./static/images/selectmultiple.png",
           type: "listselection",
           defaultData: {
             componentname: "selectmultiple",
@@ -226,7 +226,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/checkboxes.png",
+          imgsrc: "./static/images/checkboxes.png",
           type: "choice",
           defaultData: {
             componentname: "checkboxes",
@@ -235,7 +235,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/radiobuttons.png",
+          imgsrc: "./static/images/radiobuttons.png",
           type: "choice",
           defaultData: {
             componentname: "radiobuttons",
@@ -244,7 +244,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/inlinecheckboxes.png",
+          imgsrc: "./static/images/inlinecheckboxes.png",
           type: "choice",
           defaultData: {
             componentname: "inlinecheckboxes",
@@ -253,7 +253,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/inlineradios.png",
+          imgsrc: "./static/images/inlineradios.png",
           type: "choice",
           defaultData: {
             componentname: "inlineradios",
@@ -262,7 +262,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/starrating.png",
+          imgsrc: "./static/images/starrating.png",
           type: "choice",
           defaultData: {
             componentname: "starrating",
@@ -271,7 +271,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/filebutton.png",
+          imgsrc: "./static/images/filebutton.png",
           type: "button",
           defaultData: {
             componentname: "filebutton",
@@ -280,7 +280,7 @@ export default {
           }
         },
         {
-          imgsrc: "/static/images/formbutton.png",
+          imgsrc: "./static/images/formbutton.png",
           type: "button",
           defaultData: {
             componentname: "formbutton",

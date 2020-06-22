@@ -1,6 +1,6 @@
 # fromBuilder
 
-> 一个基于vue的可拖拽生成表单工具
+> 一个基于vue的可拖拽生成表单工具, 地址：[http://www.liuwenquan.vip/form-builder/index.html](http://www.liuwenquan.vip/form-builder/index.html)
 
 ## Build Setup
 

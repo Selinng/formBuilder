@@ -14,7 +14,7 @@ export default new Router({
     },
     {
       path: '/preview',
-      alias: '/',
+      // alias: '/',
       name: 'preview',
       component: Preview
     },
@@ -23,5 +23,5 @@ export default new Router({
       redirect: '/preview'
     }
   ],
-  mode: 'history'
+  mode: 'hash'
 })
