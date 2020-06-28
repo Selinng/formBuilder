@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">{{finalTitle}}</label>
     <div class="col-sm-9">
-      <input type="time" class="form-control" placeholder="请输入时间" :required="finalRequired" />
+      <input type="time" class="form-control" placeholder="请输入时间" :required="finalRequired" :name="componentattr ? componentattr.name : defaultData.name"/>
       <p class="help-block">{{finalRemarks}}</p>
     </div>
   </div>
@@ -15,7 +15,8 @@ export default {
         componentname: "timeinput",
         title: "time-input",
         remarks: "帮助信息",
-        required: false
+        required: false,
+        name: "timeinput"
       }
     };
   },

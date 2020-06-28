@@ -25,7 +25,8 @@ export default {
       defaultData: {
         componentname: "inlineradios",
         title: "inline-radios",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: "inlineradios",
       }
     };
   },

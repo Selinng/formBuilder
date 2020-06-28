@@ -7,7 +7,7 @@
     <div class="col-sm-9">
       <div class="checkbox" v-for="(checkbox, index) in checkboxlist" :key="index">
         <label>
-          <input type="checkbox" :value="checkbox" />
+          <input type="checkbox" :name="componentattr ? componentattr.name : defaultData.name" :value="checkbox" />
           {{checkbox}}
         </label>
       </div>
@@ -21,7 +21,8 @@ export default {
       defaultData: {
         componentname: "checkboxes",
         title: "check-boxes",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: 'checkboxes'
       }
     };
   },

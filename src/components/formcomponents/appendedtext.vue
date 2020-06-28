@@ -9,6 +9,7 @@
         <input
           type="text"
           class="form-control"
+          :name="componentattr ? componentattr.name : defaultData.name"
           :placeholder="componentattr ? componentattr.description : defaultData.description"
           :required="componentattr ? componentattr.required : defaultData.required"
         />
@@ -31,7 +32,8 @@ export default {
         addontext: ":>",
         description: "placeholder",
         remarks: "帮助信息",
-        required: false
+        required: false,
+        name: 'appendedtext'
       }
     };
   },

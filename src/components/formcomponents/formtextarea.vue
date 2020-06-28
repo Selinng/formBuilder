@@ -8,6 +8,7 @@
       <textarea
         class="form-control"
         rows="3"
+        :name="componentattr ? componentattr.name : defaultData.name"
         :placeholder="componentattr ? componentattr.description : defaultData.description"
         :required="componentattr ? componentattr.required : defaultData.required"
         :maxlength="componentattr ? componentattr.maxlength : defaultData.maxlength"
@@ -26,7 +27,8 @@ export default {
         description: "placeholder",
         remarks: "帮助信息",
         maxlength: 140,
-        required: false
+        required: false,
+        name: "formtextarea"
       }
     };
   },

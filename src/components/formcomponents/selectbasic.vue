@@ -18,7 +18,8 @@ export default {
       defaultData: {
         componentname: "selectbasic",
         title: "selectbasic",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: "selectbasic"
       }
     };
   },

@@ -41,6 +41,7 @@
           type="text"
           class="form-control"
           style="width:90%; margin-left:15px;"
+          :name="componentattr ? componentattr.name : defaultData.name"
           :required="componentattr ? componentattr.required : defaultData.required"
         />
         <p class="help-block">{{componentattr ? componentattr.remarks : defaultData.remarks}}</p>
@@ -2544,7 +2545,7 @@ const ADDRESS_JSON = [
   { item_code: "511126", item_name: "夹江县" },
   { item_code: "511129", item_name: "沐川县" },
   { item_code: "511132", item_name: "峨边彝族自治县" },
-  { item_code: "511133", item_name: "马边彝族自治县" },
+  { item_code: "511133", item_name: "马边��族自治县" },
   { item_code: "511181", item_name: "峨眉山市" },
   { item_code: "511302", item_name: "顺庆区" },
   { item_code: "511303", item_name: "高坪区" },
@@ -3314,7 +3315,8 @@ export default {
         componentname: "formaddress",
         title: "form-address",
         remarks: "帮助信息",
-        required: false
+        required: false,
+        name: 'formaddress'
       }
     };
   },

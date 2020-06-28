@@ -7,7 +7,7 @@
     <div class="col-sm-9">
       <div>
         <label class="checkbox-inline" v-for="(checkbox, index) in checkboxlist" :key="index">
-          <input :value="checkbox" type="checkbox" />
+          <input :value="checkbox" type="checkbox" :name="componentattr ? componentattr.name : defaultData.name"/>
           {{checkbox}}
         </label>
       </div>
@@ -21,7 +21,8 @@ export default {
       defaultData: {
         componentname: "inlinecheckboxes",
         title: "inline-checkboxes",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: 'inlinecheckboxes'
       }
     };
   },

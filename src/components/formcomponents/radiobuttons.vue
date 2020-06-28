@@ -25,7 +25,8 @@ export default {
       defaultData: {
         componentname: "radiobuttons",
         title: "radio-buttons",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: "radiobuttons"
       }
     };
   },

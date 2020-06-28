@@ -5,7 +5,7 @@
       class="col-sm-2 control-label"
     >{{componentattr ? componentattr.title : defaultData.title}}</label>
     <div class="col-sm-9">
-      <input type="file" />
+      <input type="file" :name="componentattr ? componentattr.name : defaultData.name" />
       <p class="help-block">{{componentattr ? componentattr.remarks : defaultData.remarks}}</p>
     </div>
     <!-- <input type="file" >
@@ -19,7 +19,8 @@ export default {
       defaultData: {
         componentname: "filebutton",
         title: "file-button",
-        remarks: "帮助信息"
+        remarks: "帮助信息",
+        name: 'filebutton'
       }
     };
   },

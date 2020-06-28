@@ -8,6 +8,7 @@
       <input
         type="number"
         class="form-control"
+        :name="componentattr ? componentattr.name : defaultData.name"
         :required="componentattr ? componentattr.required : defaultData.required"
       />
       <p class="help-block">{{componentattr ? componentattr.remarks : defaultData.remarks}}</p>
@@ -22,7 +23,8 @@ export default {
         componentname: "numberinput",
         title: "number-input",
         remarks: "帮助信息",
-        required: false
+        required: false,
+        name: 'numberinput'
       }
     };
   },

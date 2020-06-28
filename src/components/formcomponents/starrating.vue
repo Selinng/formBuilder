@@ -34,7 +34,8 @@ export default {
       defaultData: {
         componentname: "starrating",
         title: "star-rating",
-        remarks: "零星视为无效评级"
+        remarks: "零星视为无效评级",
+        name: "starrating"
       }
     };
   },

@@ -7,6 +7,7 @@
         class="form-control"
         :placeholder="finalDescription"
         :required="finalRequired"
+        :name="componentattr ? componentattr.name : defaultData.name"
       />
       <p class="help-block">{{finalRemarks}}</p>
     </div>
@@ -21,7 +22,8 @@ export default {
         title: "text-input",
         description: "placeholder",
         remarks: "帮助信息",
-        required: false
+        required: false,
+        name: "textinput"
       }
     };
   },

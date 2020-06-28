@@ -128,7 +128,8 @@ export default {
             title: "text-input",
             description: "placeholder",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'textinput'
           }
         },
         {
@@ -138,7 +139,8 @@ export default {
             componentname: "numberinput",
             title: "number-input",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'numberinput'
           }
         },
         {
@@ -148,7 +150,8 @@ export default {
             componentname: "dateinput",
             title: "date-input",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'dateinput'
           }
         },
         {
@@ -158,7 +161,8 @@ export default {
             componentname: "timeinput",
             title: "time-input",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'timeinput'
           }
         },
         {
@@ -170,7 +174,8 @@ export default {
             addontext: ":>",
             description: "placeholder",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'prependedtext'
           }
         },
         {
@@ -182,7 +187,8 @@ export default {
             addontext: ":>",
             description: "placeholder",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'appendedtext'
           }
         },
         {
@@ -194,7 +200,8 @@ export default {
             description: "placeholder",
             remarks: "帮助信息",
             maxlength: 140,
-            required: false
+            required: false,
+            name: 'formtextarea'
           }
         },
         {
@@ -203,7 +210,8 @@ export default {
           defaultData: {
             componentname: "selectbasic",
             title: "selectbasic",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'selectbasic'
           }
         },
         {
@@ -213,7 +221,8 @@ export default {
             componentname: "formaddress",
             title: "form-address",
             remarks: "帮助信息",
-            required: false
+            required: false,
+            name: 'formaddress'
           }
         },
         {
@@ -222,7 +231,8 @@ export default {
           defaultData: {
             componentname: "selectmultiple",
             title: "select-multiple",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'selectmultiple'
           }
         },
         {
@@ -231,7 +241,8 @@ export default {
           defaultData: {
             componentname: "checkboxes",
             title: "check-boxes",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'checkboxes'
           }
         },
         {
@@ -240,7 +251,8 @@ export default {
           defaultData: {
             componentname: "radiobuttons",
             title: "radio-buttons",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'radiobuttons'
           }
         },
         {
@@ -249,7 +261,8 @@ export default {
           defaultData: {
             componentname: "inlinecheckboxes",
             title: "inline-checkboxes",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'inlinecheckboxes'
           }
         },
         {
@@ -258,7 +271,8 @@ export default {
           defaultData: {
             componentname: "inlineradios",
             title: "inline-radios",
-            textareacontent: "Enter\nYou\nHere!"
+            textareacontent: "Enter\nYou\nHere!",
+            name: 'inlineradios'
           }
         },
         {
@@ -267,7 +281,8 @@ export default {
           defaultData: {
             componentname: "starrating",
             title: "star-rating",
-            remarks: "零星视为无效评级"
+            remarks: "零星视为无效评级",
+            name: 'starrating'
           }
         },
         {
@@ -276,7 +291,8 @@ export default {
           defaultData: {
             componentname: "filebutton",
             title: "file-button",
-            remarks: "帮助信息"
+            remarks: "帮助信息",
+            name: 'filebutton'
           }
         },
         {

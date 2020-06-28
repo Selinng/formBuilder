@@ -14,6 +14,7 @@
 <script>
 import addontext from "./attributecomponents/addontext";
 import content from "./attributecomponents/content";
+import name from "./attributecomponents/name";
 import description from "./attributecomponents/description";
 import maxlength from "./attributecomponents/maxlength";
 import remarks from "./attributecomponents/remarks";
@@ -30,13 +31,14 @@ export default {
       attributeOrder: {
         1: "title",
         2: "content",
-        3: "textareacontent",
-        4: "addontext",
-        5: "description",
-        6: "remarks",
-        7: "maxlength",
-        8: "style",
-        9: "required"
+        3: "name",
+        4: "textareacontent",
+        5: "addontext",
+        6: "description",
+        7: "remarks",
+        8: "maxlength",
+        9: "style",
+        91: "required"
       }
     };
   },
@@ -80,6 +82,7 @@ export default {
   components: {
     "data-addontext": addontext,
     "data-content": content,
+    "data-name": name,
     "data-description": description,
     "data-maxlength": maxlength,
     "data-remarks": remarks,

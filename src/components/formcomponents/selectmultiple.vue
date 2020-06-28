@@ -18,7 +18,8 @@ export default {
       defaultData: {
         componentname: "selectmultiple",
         title: "select-multiple",
-        textareacontent: "Enter\nYou\nHere!"
+        textareacontent: "Enter\nYou\nHere!",
+        name: "selectmultiple"
       }
     };
   },
