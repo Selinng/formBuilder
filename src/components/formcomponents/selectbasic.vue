@@ -5,7 +5,7 @@
       class="col-sm-2 control-label"
     >{{componentattr ? componentattr.title : defaultData.title}}</label>
     <div class="col-sm-9">
-      <select class="form-control">
+      <select class="form-control" :name="componentattr ? componentattr.name : defaultData.name">
         <option v-for="(option, index) in optionlist" :key="index" :value="option">{{option}}</option>
       </select>
     </div>

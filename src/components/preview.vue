@@ -23,13 +23,15 @@
         <center class="center">
           <button class="btn btn-info btn-sm" @click="selectTemplate">选择此模板</button>
           &nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- <button class="btn btn-primary btn-sm" @click="useTemplate">使用此模板</button>
+          &nbsp;&nbsp;&nbsp;&nbsp; -->
           <button
             class="btn btn-danger btn-sm"
             @click="deleteTemplate"
           >删除此模板</button>
         </center>
       </div>
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" :data-url="selectForm.url" :action="selectForm.url">
         <component
           v-for="item in selectForm.data"
           :key="item.id"
@@ -137,7 +139,24 @@ export default {
     }
   },
 
+  watch: {
+    selectForm() {
+      document.querySelectorAll('[data-type=submit]').forEach(i => {
+        i.addEventListener('click', () => {
+          document.forms[0].submit()
+        })
+      })
+      document.querySelectorAll('[data-type=reset]').forEach(i => {
+        i.addEventListener('click', () => {
+          document.forms[0].reset()
+        })
+      })
+    }
+  },
   methods: {
+    useTemplate() {
+
+    },
     selectTemplate() {
       this.$router.push({ path: "/edit", query: { id: this.selectID } });
     },
@@ -169,6 +188,9 @@ export default {
         require("./formcomponents/" + component.name + ".vue").default
       );
     });
+  },
+
+  mounted() {
   }
 };
 </script>

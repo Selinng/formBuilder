@@ -22,6 +22,7 @@ import required from "./attributecomponents/require";
 import style from "./attributecomponents/style";
 import title from "./attributecomponents/title";
 import textareacontent from "./attributecomponents/textareaContent";
+import type from "./attributecomponents/type";
 
 import bus from "../util/event.js";
 export default {
@@ -38,7 +39,8 @@ export default {
         7: "remarks",
         8: "maxlength",
         9: "style",
-        91: "required"
+        91: "required",
+        92: "type"
       }
     };
   },
@@ -89,7 +91,8 @@ export default {
     "data-required": required,
     "data-style": style,
     "data-title": title,
-    "data-textareacontent": textareacontent
+    "data-textareacontent": textareacontent,
+    "data-type": type
   }
 };
 </script>

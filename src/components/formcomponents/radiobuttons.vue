@@ -9,7 +9,7 @@
         <label>
           <input
             :value="radio"
-            :name="componentattr ? componentattr.title : 'radiobuttons:'"
+            :name="componentattr ? componentattr.name : defaultData.name"
             type="radio"
           />
           {{radio}}

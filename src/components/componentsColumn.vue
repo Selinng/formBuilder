@@ -302,7 +302,8 @@ export default {
             componentname: "formbutton",
             title: "form-button",
             content: "按钮",
-            style: "Primary"
+            style: "Primary",
+            type: 'submit'
           }
         }
       ]

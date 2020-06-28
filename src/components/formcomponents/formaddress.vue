@@ -38,11 +38,12 @@
       </div>
       <div class="form-group" style="margin-bottom:0;">
         <input
-          type="text"
           class="form-control"
           style="width:90%; margin-left:15px;"
+          type="hidden"
           :name="componentattr ? componentattr.name : defaultData.name"
           :required="componentattr ? componentattr.required : defaultData.required"
+          :value="address"
         />
         <p class="help-block">{{componentattr ? componentattr.remarks : defaultData.remarks}}</p>
       </div>
@@ -3341,6 +3342,12 @@ export default {
       return COUNTY_LIST.filter(
         item => this.city.substr(0, 4) === item.item_code.substr(0, 4)
       );
+    },
+    address() {
+      let province = this.getProvince.find(i => i.item_code === this.province)
+      let city = this.getCity.find(i => i.item_code === this.city)
+      let county = this.getCounty.find(i => i.item_code === this.county)
+      return `${province ? province.item_name : ''}/${city ? city.item_name : ''}/${county ? county.item_name : ''}`
     }
   },
 

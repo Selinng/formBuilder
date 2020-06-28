@@ -1,7 +1,7 @@
 
   <template>
   <div class="form-group">
-    <label for="name">选择列表</label>
+    <label for="name">样式：</label>
     <select class="form-control" v-model="$parent.currentcomponent.style">
       <option
         v-for="(style, index) in ['Default', 'Primary', 'Info', 'Success', 'Warning', 'Danger']"

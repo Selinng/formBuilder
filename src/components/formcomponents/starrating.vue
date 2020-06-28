@@ -5,7 +5,7 @@
       class="col-sm-2 control-label"
     >{{componentattr ? componentattr.title : defaultData.title}}</label>
     <div class="col-sm-9">
-      <input type="hidden" v-model="selectstar" />
+      <input type="hidden" :name="componentattr ? componentattr.name : defaultData.name" v-model="selectstar" />
       <div class="starratingbox">
         <span
           v-for="(item, index) in stararr"

@@ -9,7 +9,7 @@
         <label class="radio-inline" v-for="(radio, index) in radiolist" :key="index">
           <input
             :value="radio"
-            :name="componentattr ? componentattr.title : defaultData.title"
+            :name="componentattr ? componentattr.name : defaultData.name"
             type="radio"
           />
           {{radio}}
